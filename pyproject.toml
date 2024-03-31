@@ -1,0 +1,43 @@
+[project]
+name = "mypackage"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "", email = ""},
+]
+dependencies = []
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+docs = [
+    "mkdocstrings[python]>=0.24.1",
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.16",
+]
+
+[tool.pdm.scripts]
+docs = "mkdocs serve"
+test.cmd = [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-v",
+    "-s",
+    "tests",
+    "-t",
+    ".",
+    "-p",
+    "test_*.py"
+]
+test.env_file.override = ".env"

@@ -1,0 +1,32 @@
+site_name: My Docs
+site_description: "Default template for PDM package"
+site_url: "https://github.com/example/repository/"
+repo_url: "https://github.com/example/repository/"
+repo_name: "example/repository"
+theme:
+  name: "material"
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: yellow
+      scheme: default
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: yellow
+      scheme: slate
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+plugins:
+  - mkdocstrings
+  - search
+
+nav:
+  - index.md
